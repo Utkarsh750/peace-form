@@ -1,0 +1,501 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(/eduford_img/banner.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+nav{
+    display: flex;
+    /* for adding internal space */
+    padding: 2% 6%; 
+    justify-content: space-between;
+    align-items: center; 
+
+}
+/* here fix size of the logo */
+
+nav img{
+     width: 150px;
+}
+
+.nav-links{
+    /* occupy all the space in the row */
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul li{
+    list-style: none;
+    /* it will come horizontaly */
+    display: inline-block;
+    /* for adding spme space */
+    padding: 8px 12px;
+    position: relative;
+}
+
+/* color for anchor tag */
+.nav-links ul li a{
+    color: white ;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+/* for hovering in li */
+.nav-links ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+    background: red;
+
+}
+
+.nav-links ul li:hover::after{
+    width: 100%;
+}
+
+.text{
+    width: 90%;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* it comes in centre of div */
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.text h1{
+    font-size: 60px;
+}
+
+.text p{
+    /* 10- top , 0- left & right , 40 - bottom */
+    margin: 10px 0 40px;
+    font-size: 15px;
+    color: white;
+}
+
+.link-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+
+.link-btn:hover{
+    border: 1px solid red;
+    background: red;
+    transition: 1s;
+}
+
+/* for small screen type devices use media queries....700px mean it will applicable for the device whose width >=700px*/
+
+@media(max-width: 700px){
+    .text h1{
+        font-size: 25px;
+    }
+
+}
+
+.course{
+    width: 80%;
+    margin: auto;
+    padding-top: 100px;
+    text-align: center;
+}
+h1{
+    font-size: 40px;
+    font-weight: 700;
+}
+
+p{
+    color: rgb(139, 16, 16);
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+
+/* for courses like ug /pg*/
+.row{
+    margin-top: 5%;
+    /* for all the div inside row comes in colomn */
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.course-col{
+    flex-basis: 30%;
+    background: rgb(190, 144, 130);
+    border-radius: 10px;
+    margin-bottom: 5%;
+    margin: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+
+h3{
+    text-align: center;
+    margin: 10px 0;
+    font-weight: 700;
+}
+
+.course-col:hover{
+    box-shadow: 0 0 20px 0px rgba(1, 29, 12, 0.7);
+}
+
+/* for course-col looks gd in phn */
+@media(max-width: 700px){
+    .row{
+        flex-direction: column;
+
+    }
+}
+
+.campus{
+    /* width 80% so that space b/w left & right side */
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+}
+.campus-col{
+    flex-basis: 32%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+ .campus-col img{
+    width: 100%;
+    display: block;
+} 
+
+.layer{
+    background: transparent;
+    /*so that widht & height will cover complete img 100% resp. */
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    transition: 0.5s;
+}
+.layer:hover{
+    background: rgba(226,0,0,0.7);
+}
+
+/* changing position of title */
+.layer h3{
+    width: 100%;
+    font-weight: 500;
+    color: whitesmoke;
+    font-size: 30px;
+    bottom: 0;
+    left: 50%;
+    /* tranfrorm 50% so that it will be at bottom and cetre from the  x-axis */
+    transform: translate(-50%);
+    position: absolute;
+    opacity: 0;
+    transition: 0.5s;
+}
+.layer:hover h3{
+    bottom: 50%;
+    
+    opacity: 1;
+}
+
+/* facility */
+.facility{
+    margin: auto;
+    width: 80%;
+    text-align: center;
+    padding-top: 100px;
+
+}
+
+.facility-col{
+    flex-basis: 30%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+}
+.facility-col img{
+    width: 100%;
+    border-radius: 20px;
+}
+.facility-col p{
+    padding: 0;
+}
+.facility-col h3{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* testimonials */
+.testimonials{
+    width: 80%;
+    margin: auto;
+    padding-top: 100px;
+    text-align: center;
+}
+.testimonial-col{
+    flex-basis: 44%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+    background: rgb(243, 183, 183);
+    padding: 25px;
+    cursor: pointer;
+    display: flex;
+}
+.testimonial-col img{
+    height: 40px;
+    margin-left: 5px;
+    margin-right: 30px;
+    /* image will become circle by this */
+    border-radius: 50%;
+}
+.testimonial-col p{
+    padding: 0;
+}
+.testimonial-col h3{
+    margin-top: 15px;
+    text-align: left;
+}
+
+/*  -- for online courses */
+.cta{
+    text-align: center;
+    margin: 100px auto;
+    width: 80%;
+    padding: 100px 0;
+    border-radius: 10px;
+    background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)) ,url(/eduford_img/banner2.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.cta h1{
+    color: wheat;
+    margin-bottom: 40px;
+    padding: 0;
+}
+
+/*  to reduce big size in small screen  */
+@media(max-width: 700px){
+    .cta h1{
+        font-size: 25px;
+    }
+}
+
+.footer{
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+}
+.footer h4{
+    margin-bottom: 25px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.icons .fa{
+    color: rgb(224, 32, 32);
+    margin: 0 13px;
+    cursor: pointer;
+    padding: 18px 0;
+}
+
+/* made with utkarsh */
+.p{
+    text-align: center;
+    color: rgb(19, 1, 1);
+}
+
+/* about us page */
+.sub-header{
+    height: 50vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(/eduford_img/background.jpg);
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: white;
+}
+.sub-header h1{
+    margin-top: 100px;
+}
+
+/* about us content */
+.about-us{
+    margin: auto;
+    width: 80%;
+    padding-top: 80px;
+    padding-bottom: 50px;
+}
+.about-col{
+    flex-basis: 48%;
+    padding: 30px 2px;
+}
+.about-col img{
+    width: 100%;
+}
+.about-col h1{
+    padding-top: 0;
+}
+.about-col p{
+       padding: 15px 0 25px;
+       /* 15-top , 0 - left/right, 25- bottom */
+}
+
+.red-btn{
+    border: 1px solid #f44345;
+    background: transparent;
+    color: #f44345;
+}
+.red-btn:hover{
+    color: white;
+}
+
+/* for Blog */
+.blog-con{
+    width: 80%;
+    margin: auto;
+    padding: 60px 0;
+}
+.blog-left{
+    flex-basis: 68%;
+}
+.blog-left img{
+    width: 100%;
+}
+.blog-left h2{
+    color: #222;
+    font-weight: 600;
+    margin: 30px 0;
+}
+.blog-left p{
+    color: #222;
+    padding: 0;
+}
+.blog-right{
+    flex-basis: 32%;
+}
+.blog-right h3{
+    color:white;
+    background: #f44436;
+    padding: 7px 0;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+.blog-right div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    color: #555;
+    box-sizing: border-box;
+}
+
+.comnt-box{
+    border: 1px solid #ccc;
+    margin: 50px 0;
+    padding: 10px 20px;
+}
+.comnt-box h3{
+    text-align: left;
+}
+.comment-form input, .comment-form textarea{
+    width: 100%;
+    padding: 10px;
+    margin: 15px 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    background: #f0f0f0;
+}
+.comment-form button{
+    margin: 10px 0;
+}
+
+
+/* contact us */
+.location{
+    width: 80%;
+    margin: auto;
+    padding: 80px 0;
+}
+.location iframe{
+    width: 100%;
+}
+
+.cont-us{
+    width: 80%;
+    margin: auto;
+}
+.cont-col{
+    flex-basis: 48%;
+    margin-bottom: 30px;
+
+}
+.cont-col div{
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.cont-col div .fa{
+    font-size: 30px;
+    color: #f44436;
+    margin: 10px;
+    margin-right: 30px;
+}
+.cont-col div p{
+    padding: 0;
+}
+.cont-col div h5{
+    font-size: 22px;
+    font-weight: 500;
+    color: black;
+    margin-bottom: 5px;
+}
+
+.cont-col input, .cont-col textarea{
+    width: 100%;
+    padding: 15px;
+    outline: none;
+    margin-bottom: 18px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+
+
+
+
